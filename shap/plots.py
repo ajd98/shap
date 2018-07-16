@@ -382,7 +382,7 @@ def summary_plot(shap_values, features=None, feature_names=None, max_display=Non
         proj_shap_values[:, 1:] *= 2  # because off diag effects are split in half
         summary_plot(
             proj_shap_values, features[:, sort_inds],
-            feature_names=feature_names[sort_inds],
+            feature_names=numpy.array(feature_names)[sort_inds],
             sort=False, show=False, color_bar=False,
             auto_size_plot=False,
             max_display=max_display
